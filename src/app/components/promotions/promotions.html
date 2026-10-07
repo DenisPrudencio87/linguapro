@@ -1,0 +1,49 @@
+<section id="promociones">
+
+    <div class="container">
+  
+      <div class="text-center">
+  
+        <h2 class="section-title display-5">
+          Promociones
+        </h2>
+  
+        <p class="section-description">
+          Aprovecha nuestras ofertas vigentes.
+        </p>
+  
+      </div>
+  
+      <div class="row g-4">
+  
+        @for (promotion of promotions(); track promotion.id) {
+  
+          <div class="col-md-4">
+  
+            <div class="neo-card p-4 h-100 position-relative">
+  
+              <span class="discount">
+                {{ promotion.discount }}
+              </span>
+  
+              <i class="bi bi-gift fs-1 text-primary-custom"></i>
+  
+              <h4 class="fw-bold mt-4">
+                {{ promotion.title }}
+              </h4>
+  
+              <p class="text-secondary mb-0">
+                {{ promotion.description }}
+              </p>
+  
+            </div>
+  
+          </div>
+  
+        }
+  
+      </div>
+  
+    </div>
+  
+  </section>

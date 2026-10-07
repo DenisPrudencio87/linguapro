@@ -1,0 +1,17 @@
+.min-vh-75 {
+    min-height: 75vh;
+  }
+  
+  .hero-box {
+    max-width: 420px;
+    padding: 70px 40px;
+  }
+  
+  .hero-box i {
+    font-size: 8rem;
+    color: #6750e6;
+  }
+  
+  h1 {
+    line-height: 1.05;
+  }

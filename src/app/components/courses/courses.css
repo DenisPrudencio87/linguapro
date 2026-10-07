@@ -1,0 +1,24 @@
+.course-card {
+    transition: 0.25s;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .course-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+  
+    box-shadow:
+      inset 3px 3px 7px #c2c7cc,
+      inset -3px -3px 7px white;
+  }
+  
+  .course-icon i {
+    font-size: 2rem;
+    color: #6750e6;
+  }

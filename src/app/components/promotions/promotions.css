@@ -1,0 +1,12 @@
+.discount {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  
+    padding: 8px 12px;
+    border-radius: 10px;
+  
+    background: #6750e6;
+    color: white;
+    font-weight: bold;
+  }

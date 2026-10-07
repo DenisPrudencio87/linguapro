@@ -1,0 +1,57 @@
+<section id="cursos">
+
+    <div class="container">
+  
+      <div class="text-center">
+        <h2 class="section-title display-5">
+          Nuestros cursos
+        </h2>
+  
+        <p class="section-description">
+          Elige el idioma que deseas aprender y comienza
+          a comunicarte con el mundo.
+        </p>
+      </div>
+  
+      <div class="row g-4">
+  
+        @for (course of courses(); track course.id) {
+  
+          <div class="col-md-6 col-lg-3">
+  
+            <div class="neo-card course-card h-100 text-center p-4">
+  
+              <div class="course-icon mx-auto mb-4">
+                <i class="bi {{ course.icon }}"></i>
+              </div>
+  
+              <h4 class="fw-bold">
+                {{ course.language }}
+              </h4>
+  
+              <p class="text-primary-custom fw-semibold">
+                {{ course.name }}
+              </p>
+  
+              <p class="text-secondary">
+                {{ course.level }}
+              </p>
+  
+              <hr>
+  
+              <small>
+                <i class="bi bi-clock me-2"></i>
+                {{ course.duration }}
+              </small>
+  
+            </div>
+  
+          </div>
+  
+        }
+  
+      </div>
+  
+    </div>
+  
+  </section>

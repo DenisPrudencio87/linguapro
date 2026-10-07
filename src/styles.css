@@ -1,0 +1,135 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+:root {
+  --bg: #e8edf3;
+  --primary: #6750e6;
+  --primary-dark: #5138d5;
+  --text: #303642;
+  --muted: #6c7480;
+
+  --shadow-dark: #c2c7cc;
+  --shadow-light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.section-description {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto 45px;
+}
+
+/* NEUMORFISMO */
+
+.neo-card {
+  background: var(--bg);
+  border-radius: 22px;
+  border: none;
+  box-shadow:
+    9px 9px 18px var(--shadow-dark),
+    -9px -9px 18px var(--shadow-light);
+}
+
+.neo-inset {
+  background: var(--bg);
+  border-radius: 15px;
+  border: none;
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
+}
+
+.neo-button {
+  background: var(--bg);
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 14px;
+
+  box-shadow:
+    5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+
+  transition: 0.25s;
+}
+
+.neo-button:hover {
+  color: white;
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+.neo-button-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 25px;
+  font-weight: 600;
+
+  box-shadow:
+    5px 5px 10px var(--shadow-dark),
+    -5px -5px 10px var(--shadow-light);
+
+  transition: 0.25s;
+}
+
+.neo-button-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.neo-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 13px 15px;
+  border-radius: 12px;
+  background: var(--bg);
+
+  box-shadow:
+    inset 3px 3px 7px var(--shadow-dark),
+    inset -3px -3px 7px var(--shadow-light);
+}
+
+.neo-input:focus {
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light),
+    0 0 0 2px rgba(103, 80, 230, 0.2);
+}
+
+.text-primary-custom {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 55px 0;
+  }
+}

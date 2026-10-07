@@ -1,0 +1,7 @@
+.neo-card {
+    transition: 0.25s;
+  }
+  
+  .neo-card:hover {
+    transform: translateY(-5px);
+  }

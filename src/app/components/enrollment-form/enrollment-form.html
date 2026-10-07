@@ -1,0 +1,217 @@
+<section id="inscripcion">
+
+    <div class="container">
+  
+      <div class="text-center">
+  
+        <h2 class="section-title display-5">
+          Comienza hoy
+        </h2>
+  
+        <p class="section-description">
+          Déjanos tus datos y comienza tu aprendizaje.
+        </p>
+  
+      </div>
+  
+  
+      <div class="row justify-content-center">
+  
+        <div class="col-lg-8">
+  
+          <div class="neo-card p-4 p-md-5">
+  
+            @if (message()) {
+  
+              <div
+                class="alert alert-primary alert-dismissible fade show"
+                role="alert">
+  
+                <i class="bi bi-info-circle me-2"></i>
+  
+                {{ message() }}
+  
+                <button
+                  type="button"
+                  class="btn-close"
+                  (click)="message.set('')">
+                </button>
+  
+              </div>
+  
+            }
+  
+  
+            <form (ngSubmit)="submit()">
+  
+              <div class="row g-4">
+  
+                <div class="col-md-6">
+  
+                  <label class="form-label fw-semibold">
+                    Nombre
+                  </label>
+  
+                  <input
+                    type="text"
+                    class="neo-input"
+                    placeholder="Tu nombre"
+                    [ngModel]="name()"
+                    (ngModelChange)="name.set($event)"
+                    name="name">
+  
+                </div>
+  
+  
+                <div class="col-md-6">
+  
+                  <label class="form-label fw-semibold">
+                    Correo
+                  </label>
+  
+                  <input
+                    type="email"
+                    class="neo-input"
+                    placeholder="correo@ejemplo.com"
+                    [ngModel]="email()"
+                    (ngModelChange)="email.set($event)"
+                    name="email">
+  
+                </div>
+  
+  
+                <div class="col-md-6">
+  
+                  <label class="form-label fw-semibold">
+                    Teléfono
+                  </label>
+  
+                  <input
+                    type="text"
+                    class="neo-input"
+                    placeholder="999 999 999"
+                    [ngModel]="phone()"
+                    (ngModelChange)="phone.set($event)"
+                    name="phone">
+  
+                </div>
+  
+  
+                <div class="col-md-6">
+  
+                  <label class="form-label fw-semibold">
+                    Curso
+                  </label>
+  
+                  <select
+                    class="neo-input"
+                    [ngModel]="course()"
+                    (ngModelChange)="course.set($event)"
+                    name="course">
+  
+                    <option value="">
+                      Selecciona un idioma
+                    </option>
+  
+                    <option value="Inglés">Inglés</option>
+                    <option value="Francés">Francés</option>
+                    <option value="Portugués">Portugués</option>
+                    <option value="Italiano">Italiano</option>
+  
+                  </select>
+  
+                </div>
+  
+  
+                <div class="col-12 text-center mt-4">
+  
+                  <button
+                    type="submit"
+                    class="neo-button-primary">
+  
+                    <i class="bi bi-send me-2"></i>
+  
+                    Registrarme
+  
+                  </button>
+  
+                </div>
+  
+              </div>
+  
+            </form>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+  
+      @if (enrollments().length > 0) {
+  
+        <div class="mt-5">
+  
+          <h3 class="text-center fw-bold mb-4">
+            Solicitudes registradas
+          </h3>
+  
+  
+          <div class="row g-4">
+  
+            @for (student of enrollments(); track student.id) {
+  
+              <div class="col-md-6 col-lg-4">
+  
+                <div class="neo-card p-4 h-100">
+  
+                  <div class="d-flex justify-content-between">
+  
+                    <div>
+  
+                      <h5 class="fw-bold">
+                        {{ student.name }}
+                      </h5>
+  
+                      <p class="mb-1">
+                        <i class="bi bi-envelope me-2"></i>
+                        {{ student.email }}
+                      </p>
+  
+                      <p class="mb-1">
+                        <i class="bi bi-phone me-2"></i>
+                        {{ student.phone }}
+                      </p>
+  
+                      <span class="badge bg-primary mt-2">
+                        {{ student.course }}
+                      </span>
+  
+                    </div>
+  
+  
+                    <button
+                      class="btn btn-outline-danger btn-sm h-100"
+                      (click)="deleteEnrollment(student.id)">
+  
+                      <i class="bi bi-trash"></i>
+  
+                    </button>
+  
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            }
+  
+          </div>
+  
+        </div>
+  
+      }
+  
+    </div>
+  
+  </section>

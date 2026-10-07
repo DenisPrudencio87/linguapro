@@ -1,0 +1,51 @@
+<section id="docentes">
+
+    <div class="container">
+  
+      <div class="text-center">
+  
+        <h2 class="section-title display-5">
+          Nuestros docentes
+        </h2>
+  
+        <p class="section-description">
+          Profesionales especializados en enseñanza de idiomas.
+        </p>
+  
+      </div>
+  
+      <div class="row justify-content-center g-4">
+  
+        @for (teacher of teachers(); track teacher.id) {
+  
+          <div class="col-md-6 col-lg-4">
+  
+            <div class="neo-card text-center p-5 h-100">
+  
+              <div class="teacher-avatar mx-auto mb-4">
+                {{ teacher.initials }}
+              </div>
+  
+              <h4 class="fw-bold">
+                {{ teacher.name }}
+              </h4>
+  
+              <p class="text-primary-custom fw-semibold">
+                {{ teacher.specialty }}
+              </p>
+  
+              <p class="text-secondary mb-0">
+                {{ teacher.experience }}
+              </p>
+  
+            </div>
+  
+          </div>
+  
+        }
+  
+      </div>
+  
+    </div>
+  
+  </section>

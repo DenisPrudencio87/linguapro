@@ -1,0 +1,55 @@
+<section>
+
+    <div class="container">
+  
+      <div class="text-center">
+  
+        <h2 class="section-title display-5">
+          Nuestros estudiantes opinan
+        </h2>
+  
+        <p class="section-description">
+          Conoce la experiencia de nuestra comunidad.
+        </p>
+  
+      </div>
+  
+      <div class="row g-4">
+  
+        @for (review of reviews(); track review.id) {
+  
+          <div class="col-md-4">
+  
+            <div class="neo-card p-4 h-100">
+  
+              <div class="mb-3">
+  
+                @for (star of [1,2,3,4,5]; track star) {
+  
+                  @if (star <= review.rating) {
+                    <i class="bi bi-star-fill text-warning"></i>
+                  }
+  
+                }
+  
+              </div>
+  
+              <p>
+                "{{ review.comment }}"
+              </p>
+  
+              <strong>
+                {{ review.student }}
+              </strong>
+  
+            </div>
+  
+          </div>
+  
+        }
+  
+      </div>
+  
+    </div>
+  
+  </section>
